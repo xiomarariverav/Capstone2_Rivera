@@ -36,5 +36,23 @@ public class Ingredients {
     public BigDecimal getSmallPrice() {
         return smallPrice;
     }
+
+    public BigDecimal getPriceBySize(String size) {
+
+        switch (size.toLowerCase()) {
+
+            case "small":
+                return smallPrice;
+
+            case "medium":
+                return mediumPrice;
+
+            case "large":
+                return largePrice;
+
+            default:
+                return BigDecimal.ZERO;
+        }
+    }
 }
 
