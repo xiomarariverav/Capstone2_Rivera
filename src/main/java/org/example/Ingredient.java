@@ -36,6 +36,13 @@ public class Ingredient {
     public BigDecimal getSmallPrice() {
         return smallPrice;
     }
+    public BigDecimal getMediumPrice() {
+        return mediumPrice;
+    }
+
+    public BigDecimal getLargePrice() {
+        return largePrice;
+    }
 
     public BigDecimal getPriceBySize(String size) {
 

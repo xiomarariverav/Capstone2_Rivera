@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class MenuLoader {
-    public static ArrayList<Ingredient> loadingIngredient(String filePath){
+    public static ArrayList<Ingredient> loadingIngredients(String filePath){
 
         ArrayList<Ingredient> ingredients = new ArrayList<>();
 
@@ -20,7 +20,22 @@ public class MenuLoader {
 
             while (line != null) {
 
+                // defensive coding
+                // skip empty lines in the file
+                if (line.trim().isEmpty()) {
+                    line = reader.readLine();
+                    continue;
+                }
+
                 String[] parts = line.split("\\|");
+
+                // defensive coding
+                // skip rows with missing or extra columns
+                if (parts.length != 5) {
+                    System.out.println("Invalid row: " + line);
+                    line = reader.readLine();
+                    continue;
+                }
 
                 //name|type|smallPrice|mediumPrice|largePrice
                 Ingredient ingredient = new Ingredient(
@@ -31,7 +46,7 @@ public class MenuLoader {
                         new BigDecimal(parts[4])
                 );
 
-                ingredients.add(ingredient);;
+                ingredients.add(ingredient);
 
                 line = reader.readLine();
             }

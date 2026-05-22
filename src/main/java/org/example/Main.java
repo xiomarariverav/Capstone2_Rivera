@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Ingredient> ingredients =
-                MenuLoader.loadingIngredient("src/main/resources/cafe_menu_items.csv");
+                MenuLoader.loadingIngredients("src/main/resources/cafe_menu_items.csv");
 
         for(Ingredient ingredient : ingredients){
 
