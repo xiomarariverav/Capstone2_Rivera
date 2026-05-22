@@ -8,11 +8,11 @@ public class Main {
         ArrayList<Ingredient> ingredients =
                 MenuLoader.loadingIngredients("src/main/resources/cafe_menu_items.csv");
 
-        CoffeeDrink coffee = new CoffeeDrink("Latte", "medium", "iced");
-
-        coffee.addIngredient(ingredients.get(1));  // Latte
-        coffee.addIngredient(ingredients.get(7));  // Espresso Shot
-        coffee.addIngredient(ingredients.get(15)); // Vanilla Syrup
+        CoffeeDrink coffee = new CoffeeBuilder("Latte", "medium", "iced")
+                .addIngredient(ingredients.get(1))
+                .addIngredient(ingredients.get(7))
+                .addIngredient(ingredients.get(15))
+                .build();
 
         System.out.println(coffee.getSize() + " "
                 + coffee.getTemperature() + " "
