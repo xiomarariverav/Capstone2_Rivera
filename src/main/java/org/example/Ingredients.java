@@ -8,4 +8,33 @@ public class Ingredients {
     private BigDecimal smallPrice;
     private BigDecimal mediumPrice;
     private BigDecimal largePrice;
+
+    public Ingredients(String name, String type, BigDecimal smallPrice, BigDecimal mediumPrice, BigDecimal largePrice) {
+        this.name = name;
+        this.type = type;
+        this.smallPrice = smallPrice;
+        this.mediumPrice = mediumPrice;
+        this.largePrice = largePrice;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public BigDecimal getSmallPrice() {
+        return smallPrice;
+    }
 }
+
