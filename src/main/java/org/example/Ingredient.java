@@ -2,14 +2,14 @@ package org.example;
 
 import java.math.BigDecimal;
 
-public class Ingredients {
+public class Ingredient {
     private String name;
     private String type;
     private BigDecimal smallPrice;
     private BigDecimal mediumPrice;
     private BigDecimal largePrice;
 
-    public Ingredients(String name, String type, BigDecimal smallPrice, BigDecimal mediumPrice, BigDecimal largePrice) {
+    public Ingredient(String name, String type, BigDecimal smallPrice, BigDecimal mediumPrice, BigDecimal largePrice) {
         this.name = name;
         this.type = type;
         this.smallPrice = smallPrice;
