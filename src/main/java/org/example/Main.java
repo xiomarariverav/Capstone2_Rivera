@@ -2,17 +2,22 @@ package org.example;
 
 import java.util.ArrayList;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
         ArrayList<Ingredient> ingredients =
                 MenuLoader.loadingIngredients("src/main/resources/cafe_menu_items.csv");
 
-        for(Ingredient ingredient : ingredients){
+        CoffeeDrink coffee = new CoffeeDrink("Latte", "medium", "iced");
 
-            System.out.println(ingredient.getName());
-        }
+        coffee.addIngredient(ingredients.get(1));  // Latte
+        coffee.addIngredient(ingredients.get(7));  // Espresso Shot
+        coffee.addIngredient(ingredients.get(15)); // Vanilla Syrup
+
+        System.out.println(coffee.getSize() + " "
+                + coffee.getTemperature() + " "
+                + coffee.getDrinkType());
+
+        System.out.println("Total: $" + coffee.getPrice());
     }
 }
