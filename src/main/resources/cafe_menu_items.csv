@@ -1,0 +1,20 @@
+name|type|smallPrice|mediumPrice|largePrice
+Coffee|drink_base|4.50|5.75|6.50
+Latte|drink_base|4.50|5.75|6.50
+Cappuccino|drink_base|4.50|5.75|6.50
+Cold Brew|drink_base|4.50|5.75|6.50
+Matcha|drink_base|4.50|5.75|6.50
+Chai|drink_base|4.50|5.75|6.50
+Mocha|drink_base|4.50|5.75|6.50
+Espresso Shot|premium|1.00|2.00|3.00
+Extra Espresso Shot|premium|0.50|1.00|1.50
+Specialty Milk|premium|0.75|1.50|2.25
+Extra Specialty Milk|premium|0.30|0.60|0.90
+Sugar|regular|0.00|0.00|0.00
+Cinnamon|regular|0.00|0.00|0.00
+Sweetener|regular|0.00|0.00|0.00
+Ice|regular|0.00|0.00|0.00
+Vanilla Syrup|syrup|0.00|0.00|0.00
+Caramel Syrup|syrup|0.00|0.00|0.00
+Whipped Cream|topping|0.00|0.00|0.00
+Cold Foam|topping|0.00|0.00|0.00
