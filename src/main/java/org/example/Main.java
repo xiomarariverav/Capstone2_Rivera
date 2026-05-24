@@ -3,10 +3,13 @@ package org.example;
 import java.util.ArrayList;
 
 public class Main {
+
     public static void main(String[] args) {
 
         ArrayList<Ingredient> ingredients =
                 MenuLoader.loadingIngredients("src/main/resources/cafe_menu_items.csv");
+
+        Order order = new Order();
 
         CoffeeDrink coffee = new CoffeeBuilder("Latte", "medium", "iced")
                 .addIngredient(ingredients.get(1))
@@ -14,10 +17,14 @@ public class Main {
                 .addIngredient(ingredients.get(15))
                 .build();
 
+        order.addCoffee(coffee);
+
         System.out.println(coffee.getSize() + " "
                 + coffee.getTemperature() + " "
                 + coffee.getDrinkType());
 
-        System.out.println("Total: $" + coffee.getPrice());
+        System.out.println("Coffee Total: $" + coffee.getPrice());
+
+        System.out.println("Order Total: $" + order.getTotal());
     }
 }
