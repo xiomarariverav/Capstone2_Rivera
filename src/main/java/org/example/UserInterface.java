@@ -327,15 +327,65 @@ public class UserInterface {
 
         // add the drink base ingredient
         for (Ingredient ingredient : ingredients) {
+
             if (ingredient.getName().equalsIgnoreCase(drinkType)) {
                 builder.addIngredient(ingredient);
             }
         }
+
+        // add premium ingredients
+        addPremiumAddIns(builder);
 
         CoffeeDrink coffee = builder.build();
 
         currentOrder.addItem(coffee);
 
         System.out.println(size + " " + temperature + " " + drinkType + " added to order.");
+    }
+    public void addPremiumAddIns(CoffeeBuilder builder) {
+
+        boolean adding = true;
+
+        while (adding) {
+            System.out.println("\nPremium Add-Ins");
+            System.out.println("1) Espresso Shot");
+            System.out.println("2) Specialty Milk");
+            System.out.println("3) Extra Espresso Shot");
+            System.out.println("4) Extra Specialty Milk");
+            System.out.println("0) Done");
+            System.out.print("Choose an option: ");
+
+            String choice = scanner.nextLine();
+
+            String ingredientName = "";
+
+            switch (choice) {
+                case "1":
+                    ingredientName = "Espresso Shot";
+                    break;
+                case "2":
+                    ingredientName = "Specialty Milk";
+                    break;
+                case "3":
+                    ingredientName = "Extra Espresso Shot";
+                    break;
+                case "4":
+                    ingredientName = "Extra Specialty Milk";
+                    break;
+                case "0":
+                    adding = false;
+                    continue;
+                default:
+                    System.out.println("Invalid option.");
+                    continue;
+            }
+
+            for (Ingredient ingredient : ingredients) {
+                if (ingredient.getName().equalsIgnoreCase(ingredientName)) {
+                    builder.addIngredient(ingredient);
+                    System.out.println(ingredientName + " added.");
+                }
+            }
+        }
     }
 }
