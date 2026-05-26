@@ -17,7 +17,7 @@ public class Main {
                 .addIngredient(ingredients.get(15))
                 .build();
 
-        order.addCoffee(coffee);
+        order.addItem(coffee);
 
         System.out.println(coffee.getSize() + " "
                 + coffee.getTemperature() + " "

@@ -5,28 +5,29 @@ import java.util.ArrayList;
 
 public class Order {
 
-    private ArrayList<CoffeeDrink> coffees;
+    private ArrayList<OrderItem> items;
 
     public Order() {
-        coffees = new ArrayList<>();
+        items = new ArrayList<>();
     }
 
-    public void addCoffee(CoffeeDrink coffee) {
-        coffees.add(coffee);
+    public void addItem(OrderItem item) {
+        // newest item first
+        items.add(0, item);
     }
 
     public BigDecimal getTotal() {
         BigDecimal total = BigDecimal.ZERO;
 
-        for (CoffeeDrink coffee : coffees) {
+        for (OrderItem item : items) {
             // add each coffee's price to the total
-            total = total.add(coffee.getPrice());
+            total = total.add(item.getPrice());
         }
 
         return total;
     }
 
-    public ArrayList<CoffeeDrink> getCoffees() {
-        return coffees;
+    public ArrayList<OrderItem> getItems() {
+        return items;
     }
 }
