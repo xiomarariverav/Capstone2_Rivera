@@ -416,8 +416,14 @@ public class UserInterface {
             System.out.println("4) Ice");
             System.out.println("5) Vanilla Syrup");
             System.out.println("6) Caramel Syrup");
-            System.out.println("7) Whipped Cream");
-            System.out.println("8) Cold Foam");
+            System.out.println("7) Mocha Syrup");
+            System.out.println("8) Hazelnut");
+            System.out.println("9) Brown Sugar");
+            System.out.println("10) Lavender");
+            System.out.println("11) Whipped Cream");
+            System.out.println("12) Caramel Drizzle");
+            System.out.println("13) Chocolate Drizzle");
+            System.out.println("14) Cold Foam");
             System.out.println("0) Done");
 
             System.out.print("Choose an option: ");
@@ -453,10 +459,34 @@ public class UserInterface {
                     break;
 
                 case "7":
-                    ingredientName = "Whipped Cream";
+                    ingredientName = "Mocha Syrup";
                     break;
 
                 case "8":
+                    ingredientName = "Hazelnut";
+                    break;
+
+                case "9":
+                    ingredientName = "Brown Sugar";
+                    break;
+
+                case "10":
+                    ingredientName = "Lavender";
+                    break;
+
+                case "11":
+                    ingredientName = "Whipped Cream";
+                    break;
+
+                case "12":
+                    ingredientName = "Caramel Drizzle";
+                    break;
+
+                case "13":
+                    ingredientName = "Chocolate Drizzle";
+                    break;
+
+                case "14":
                     ingredientName = "Cold Foam";
                     break;
 
