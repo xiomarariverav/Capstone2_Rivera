@@ -196,6 +196,11 @@ public class UserInterface {
     }
     public void displayCheckoutScreen() {
 
+        if (currentOrder.getItems().isEmpty()) {
+            System.out.println("You cannot checkout with an empty order.");
+            return;
+        }
+
         System.out.println("\nCheckout");
         System.out.println("----------------------");
 
