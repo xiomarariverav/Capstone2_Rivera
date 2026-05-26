@@ -60,7 +60,7 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
-                    System.out.println("Add coffee coming soon...");
+                    displayAddCoffeeScreen();
                     break;
 
                 case "2":
@@ -227,5 +227,115 @@ public class UserInterface {
                 System.out.println("Invalid option.");
                 break;
         }
+    }
+    public String selectCoffeeType() {
+
+        System.out.println("\nSelect Coffee Type");
+        System.out.println("1) Coffee");
+        System.out.println("2) Latte");
+        System.out.println("3) Cappuccino");
+        System.out.println("4) Cold Brew");
+        System.out.println("5) Matcha");
+        System.out.println("6) Chai");
+        System.out.println("7) Mocha");
+        System.out.print("Choose a drink type: ");
+
+        String choice = scanner.nextLine();
+
+        switch (choice) {
+            case "1":
+                return "Coffee";
+            case "2":
+                return "Latte";
+            case "3":
+                return "Cappuccino";
+            case "4":
+                return "Cold Brew";
+            case "5":
+                return "Matcha";
+            case "6":
+                return "Chai";
+            case "7":
+                return "Mocha";
+            default:
+                System.out.println("Invalid option.");
+                return "";
+        }
+    }
+    public String selectSize() {
+
+        System.out.println("\nSelect Size");
+        System.out.println("1) Small");
+        System.out.println("2) Medium");
+        System.out.println("3) Large");
+        System.out.print("Choose a size: ");
+
+        String choice = scanner.nextLine();
+
+        switch (choice) {
+            case "1":
+                return "small";
+            case "2":
+                return "medium";
+            case "3":
+                return "large";
+            default:
+                System.out.println("Invalid option.");
+                return "";
+        }
+    }
+    public String selectTemperature() {
+
+        System.out.println("\nSelect Temperature");
+        System.out.println("1) Hot");
+        System.out.println("2) Iced");
+        System.out.print("Choose temperature: ");
+
+        String choice = scanner.nextLine();
+
+        switch (choice) {
+            case "1":
+                return "hot";
+            case "2":
+                return "iced";
+            default:
+                System.out.println("Invalid option.");
+                return "";
+        }
+    }
+    public void displayAddCoffeeScreen() {
+
+        String drinkType = selectCoffeeType();
+
+        if (drinkType.equals("")) {
+            return;
+        }
+
+        String size = selectSize();
+
+        if (size.equals("")) {
+            return;
+        }
+
+        String temperature = selectTemperature();
+
+        if (temperature.equals("")) {
+            return;
+        }
+
+        CoffeeBuilder builder = new CoffeeBuilder(drinkType, size, temperature);
+
+        // add the drink base ingredient
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.getName().equalsIgnoreCase(drinkType)) {
+                builder.addIngredient(ingredient);
+            }
+        }
+
+        CoffeeDrink coffee = builder.build();
+
+        currentOrder.addItem(coffee);
+
+        System.out.println(size + " " + temperature + " " + drinkType + " added to order.");
     }
 }
