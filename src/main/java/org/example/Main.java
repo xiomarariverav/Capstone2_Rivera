@@ -33,5 +33,11 @@ public class Main {
 
         System.out.println(pastry.getDetails());
         System.out.println("Order Total: $" + order.getTotal());
+
+        OtherDrink drink = new OtherDrink("Lemonade", "large");
+        order.addItem(drink);
+
+        System.out.println(drink.getDetails());
+        System.out.println("Order Total: $" + order.getTotal());
     }
 }
