@@ -64,7 +64,7 @@ public class UserInterface {
                     break;
 
                 case "2":
-                    System.out.println("Add other drink coming soon...");
+                    displayAddOtherDrinkScreen();
                     break;
 
                 case "3":
@@ -133,5 +133,64 @@ public class UserInterface {
         currentOrder.addItem(pastry);
 
         System.out.println(pastryType + " added to order.");
+    }
+    public void displayAddOtherDrinkScreen() {
+
+        System.out.println("\nSelect Other Drink Flavor");
+        System.out.println("1) Lemonade");
+        System.out.println("2) Iced Tea");
+        System.out.println("3) Refresher");
+        System.out.println("4) Bottled Water");
+        System.out.print("Choose a drink: ");
+
+        String flavorChoice = scanner.nextLine();
+        String flavor = "";
+
+        switch (flavorChoice) {
+            case "1":
+                flavor = "Lemonade";
+                break;
+            case "2":
+                flavor = "Iced Tea";
+                break;
+            case "3":
+                flavor = "Refresher";
+                break;
+            case "4":
+                flavor = "Bottled Water";
+                break;
+            default:
+                System.out.println("Invalid option.");
+                return;
+        }
+
+        System.out.println("\nSelect Size");
+        System.out.println("1) Small");
+        System.out.println("2) Medium");
+        System.out.println("3) Large");
+        System.out.print("Choose a size: ");
+
+        String sizeChoice = scanner.nextLine();
+        String size = "";
+
+        switch (sizeChoice) {
+            case "1":
+                size = "small";
+                break;
+            case "2":
+                size = "medium";
+                break;
+            case "3":
+                size = "large";
+                break;
+            default:
+                System.out.println("Invalid option.");
+                return;
+        }
+
+        OtherDrink otherDrink = new OtherDrink(flavor, size);
+        currentOrder.addItem(otherDrink);
+
+        System.out.println(size + " " + flavor + " added to order.");
     }
 }
