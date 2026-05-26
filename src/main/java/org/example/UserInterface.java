@@ -7,6 +7,7 @@ public class UserInterface {
 
     private Scanner scanner;
     private ArrayList<Ingredient> ingredients;
+    private Order currentOrder;
 
     public UserInterface() {
         scanner = new Scanner(System.in);
@@ -27,6 +28,7 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
+                    currentOrder = new Order();
                     displayOrderScreen();
                     break;
                 case "0":
@@ -43,7 +45,6 @@ public class UserInterface {
 
     public void displayOrderScreen() {
 
-        Order order = new Order();
         boolean ordering = true;
 
         while (ordering) {
@@ -67,7 +68,7 @@ public class UserInterface {
                     break;
 
                 case "3":
-                    System.out.println("Add pastry coming soon...");
+                    displayAddPastryScreen();
                     break;
 
                 case "4":
@@ -84,5 +85,53 @@ public class UserInterface {
                     break;
             }
         }
+    }
+    public void displayAddPastryScreen() {
+
+        System.out.println("\nSelect Pastry");
+        System.out.println("1) Muffin");
+        System.out.println("2) Croissant");
+        System.out.println("3) Bagel");
+        System.out.println("4) Cookie");
+        System.out.println("5) Brownie");
+
+        System.out.print("Choose a pastry: ");
+
+        String choice = scanner.nextLine();
+
+        String pastryType = "";
+
+        switch (choice) {
+
+            case "1":
+                pastryType = "Muffin";
+                break;
+
+            case "2":
+                pastryType = "Croissant";
+                break;
+
+            case "3":
+                pastryType = "Bagel";
+                break;
+
+            case "4":
+                pastryType = "Cookie";
+                break;
+
+            case "5":
+                pastryType = "Brownie";
+                break;
+
+            default:
+                System.out.println("Invalid option.");
+                return;
+        }
+
+        Pastry pastry = new Pastry(pastryType);
+
+        currentOrder.addItem(pastry);
+
+        System.out.println(pastryType + " added to order.");
     }
 }
