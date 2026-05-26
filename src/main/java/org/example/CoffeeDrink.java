@@ -57,7 +57,7 @@ public class CoffeeDrink implements OrderItem {
             details += "- " + ingredient.getName() + "\n";
         }
         // add the final drink price to the bottom
-        details += "Price: $" + getPrice();
+        details += "Drink Price: $" + getPrice();
 
         return details;
     }

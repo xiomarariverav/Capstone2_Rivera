@@ -28,5 +28,10 @@ public class Main {
         System.out.println("Order Total: $" + order.getTotal());
 
         System.out.println(coffee.getDetails());
+        Pastry pastry = new Pastry("Croissant");
+        order.addItem(pastry);
+
+        System.out.println(pastry.getDetails());
+        System.out.println("Order Total: $" + order.getTotal());
     }
 }
