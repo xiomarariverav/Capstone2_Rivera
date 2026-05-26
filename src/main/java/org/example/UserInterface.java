@@ -72,7 +72,8 @@ public class UserInterface {
                     break;
 
                 case "4":
-                    System.out.println("Checkout coming soon...");
+                    displayCheckoutScreen();
+                    ordering = false;
                     break;
 
                 case "0":
@@ -192,5 +193,39 @@ public class UserInterface {
         currentOrder.addItem(otherDrink);
 
         System.out.println(size + " " + flavor + " added to order.");
+    }
+    public void displayCheckoutScreen() {
+
+        System.out.println("\nCheckout");
+        System.out.println("----------------------");
+
+        for (OrderItem item : currentOrder.getItems()) {
+            System.out.println(item.getDetails());
+            System.out.println();
+        }
+
+        System.out.println("----------------------");
+        System.out.println("Total: $" + currentOrder.getTotal());
+
+        System.out.println("\n1) Confirm");
+        System.out.println("0) Cancel");
+        System.out.print("Choose an option: ");
+
+        String choice = scanner.nextLine();
+
+        switch (choice) {
+            case "1":
+                ReceiptWriter.saveReceipt(currentOrder);
+                System.out.println("Order complete.");
+                break;
+
+            case "0":
+                System.out.println("Checkout canceled.");
+                break;
+
+            default:
+                System.out.println("Invalid option.");
+                break;
+        }
     }
 }
