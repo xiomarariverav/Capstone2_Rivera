@@ -83,6 +83,7 @@ public class UserInterface {
 
                 case "0":
                     System.out.println("Order canceled.");
+                    currentOrder = null;
                     ordering = false;
                     break;
 
@@ -228,6 +229,7 @@ public class UserInterface {
             case "1":
                 ReceiptWriter.saveReceipt(currentOrder);
                 System.out.println("Order complete.");
+                currentOrder = null;
                 break;
 
             case "0":
