@@ -1,0 +1,15 @@
+Latte Lane Receipt
+------------------
+
+large Lemonade:$3.00
+
+Croissant Pastry Price: $1.50
+
+medium iced Latte
+- Latte
+- Espresso Shot
+- Vanilla Syrup
+Drink Price: $7.75
+
+----------------------
+TOTAL: $12.25

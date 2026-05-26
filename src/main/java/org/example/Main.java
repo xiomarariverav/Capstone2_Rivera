@@ -39,5 +39,7 @@ public class Main {
 
         System.out.println(drink.getDetails());
         System.out.println("Order Total: $" + order.getTotal());
+
+        ReceiptWriter.saveReceipt(order);
     }
 }
