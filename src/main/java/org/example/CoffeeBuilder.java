@@ -9,6 +9,7 @@ public class CoffeeBuilder {
     }
 
     public CoffeeBuilder addIngredient(Ingredient ingredient) {
+        // send the ingredient to the CoffeeDrink object
         coffeeDrink.addIngredient(ingredient);
         return this;
     }

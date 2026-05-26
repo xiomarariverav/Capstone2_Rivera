@@ -25,6 +25,8 @@ public class CoffeeDrink implements OrderItem {
         BigDecimal total = BigDecimal.ZERO;
 
         for (Ingredient ingredient : addIns) {
+            // get the ingredient price based on drink size
+            // then add it to the total
             total = total.add(ingredient.getPriceBySize(size));
         }
 
@@ -45,5 +47,18 @@ public class CoffeeDrink implements OrderItem {
 
     public ArrayList<Ingredient> getAddIns() {
         return addIns;
+    }
+    @Override
+    public String getDetails() {
+        String details = size + " " + temperature + " " + drinkType + "\n";
+
+        for (Ingredient ingredient : addIns) {
+            //add each ingredient name onto a new line
+            details += "- " + ingredient.getName() + "\n";
+        }
+        // add the final drink price to the bottom
+        details += "Price: $" + getPrice();
+
+        return details;
     }
 }

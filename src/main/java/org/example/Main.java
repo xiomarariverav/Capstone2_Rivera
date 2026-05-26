@@ -26,5 +26,7 @@ public class Main {
         System.out.println("Coffee Total: $" + coffee.getPrice());
 
         System.out.println("Order Total: $" + order.getTotal());
+
+        System.out.println(coffee.getDetails());
     }
 }

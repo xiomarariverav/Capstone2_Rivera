@@ -19,6 +19,7 @@ public class Order {
         BigDecimal total = BigDecimal.ZERO;
 
         for (CoffeeDrink coffee : coffees) {
+            // add each coffee's price to the total
             total = total.add(coffee.getPrice());
         }
 
