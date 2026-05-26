@@ -1,0 +1,14 @@
+Latte Lane Receipt
+------------------
+
+medium Refresher Price: $2.50
+
+Bagel Pastry Price: $1.50
+
+medium iced Latte
+- Latte
+- Sugar
+Drink Price: $5.75
+
+----------------------
+TOTAL: $9.75

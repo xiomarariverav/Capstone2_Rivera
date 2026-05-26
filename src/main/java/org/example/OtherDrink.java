@@ -29,9 +29,10 @@ public class OtherDrink implements OrderItem{
                 return BigDecimal.ZERO;
         }
     }
+
     @Override
-    public String getDetails(){
-        return size + " " + flavor + ":$" + getPrice();
+    public String getDetails() {
+        return size + " " + flavor + " Price: $" + getPrice();
     }
 
     public String getFlavor(){
