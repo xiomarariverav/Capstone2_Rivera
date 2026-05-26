@@ -27,12 +27,56 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
-                    System.out.println("Starting new order...");
+                    displayOrderScreen();
                     break;
-
                 case "0":
                     System.out.println("Goodbye!");
                     running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid option. Try again.");
+                    break;
+            }
+        }
+    }
+
+    public void displayOrderScreen() {
+
+        Order order = new Order();
+        boolean ordering = true;
+
+        while (ordering) {
+            System.out.println("\nOrder Screen");
+            System.out.println("1) Add Coffee");
+            System.out.println("2) Add Other Drink");
+            System.out.println("3) Add Pastry");
+            System.out.println("4) Checkout");
+            System.out.println("0) Cancel Order");
+            System.out.print("Choose an option: ");
+
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    System.out.println("Add coffee coming soon...");
+                    break;
+
+                case "2":
+                    System.out.println("Add other drink coming soon...");
+                    break;
+
+                case "3":
+                    System.out.println("Add pastry coming soon...");
+                    break;
+
+                case "4":
+                    System.out.println("Checkout coming soon...");
+                    break;
+
+                case "0":
+                    System.out.println("Order canceled.");
+                    ordering = false;
                     break;
 
                 default:
