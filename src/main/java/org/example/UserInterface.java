@@ -53,6 +53,7 @@ public class UserInterface {
             System.out.println("2) Add Other Drink");
             System.out.println("3) Add Pastry");
             System.out.println("4) Checkout");
+            System.out.println("5) View Current Order");
             System.out.println("0) Cancel Order");
             System.out.print("Choose an option: ");
 
@@ -76,6 +77,10 @@ public class UserInterface {
                     ordering = false;
                     break;
 
+                case "5":
+                    displayCurrentOrder();
+                    break;
+
                 case "0":
                     System.out.println("Order canceled.");
                     ordering = false;
@@ -87,6 +92,7 @@ public class UserInterface {
             }
         }
     }
+
     public void displayAddPastryScreen() {
 
         System.out.println("\nSelect Pastry");
@@ -471,5 +477,23 @@ public class UserInterface {
                 }
             }
         }
+    }
+    public void displayCurrentOrder() {
+
+        if (currentOrder.getItems().isEmpty()) {
+            System.out.println("Your order is currently empty.");
+            return;
+        }
+
+        System.out.println("\nCurrent Order");
+        System.out.println("----------------------");
+
+        for (OrderItem item : currentOrder.getItems()) {
+            System.out.println(item.getDetails());
+            System.out.println();
+        }
+
+        System.out.println("----------------------");
+        System.out.println("Total: $" + currentOrder.getTotal());
     }
 }
