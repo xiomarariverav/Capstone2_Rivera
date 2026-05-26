@@ -3,7 +3,7 @@ package org.example;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class CoffeeDrink {
+public class CoffeeDrink implements OrderItem {
 
     private String drinkType;
     private String size;
