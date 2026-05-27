@@ -20,37 +20,59 @@ public class UserInterface {
 
         while (running) {
 
-            System.out.println("""
-                                 ;,'
-                         _o_    ;:;'
-                     ,-.'---`.__ ;
-                    ((j`=====',-'
-                     `-\\     /
-                        `-=-'
-            
-            Welcome to Latte Lane!
-            """);
+            System.out.println(ConsoleColors.DARK_SAGE + """
+                
+══════════════════════════════════════════════════
+""" + ConsoleColors.RESET);
 
-            System.out.println("Home Screen");
-            System.out.println("1) New Order");
-            System.out.println("0) Exit");
-            System.out.print("Choose an option: ");
+            System.out.println(ConsoleColors.SAGE + """
+                         )  (
+                        (   ) )
+                         ) ( (
+                     _______)_
+                  .-'---------|
+                 ( C|/\\/\\/\\/\\/|
+                  '-./\\/\\/\\/\\/|
+                    '_________'
+                     '-------'
+""" + ConsoleColors.RESET);
+
+            System.out.println(ConsoleColors.CREAM + """
+                  ✦ Welcome to Latte Lane ✦
+""" + ConsoleColors.RESET);
+
+            System.out.println(ConsoleColors.DARK_SAGE + """
+══════════════════════════════════════════════════
+""" + ConsoleColors.RESET);
+
+            System.out.println(ConsoleColors.CREAM + "1) New Order");
+            System.out.println("0) Exit" + ConsoleColors.RESET);
+
+            System.out.print(ConsoleColors.SAGE +
+                    "\nChoose an option: " +
+                    ConsoleColors.RESET);
 
             String choice = scanner.nextLine();
 
             switch (choice) {
+
                 case "1":
                     currentOrder = new Order();
                     displayOrderScreen();
                     break;
 
                 case "0":
-                    System.out.println("Goodbye!");
+                    System.out.println(ConsoleColors.CREAM +
+                            "\nThank you for visiting Latte Lane \uD83E\uDD0E"
+                            + ConsoleColors.RESET);
+
                     running = false;
                     break;
 
                 default:
-                    System.out.println("Invalid option. Try again.");
+                    System.out.println(ConsoleColors.BRIGHT_RED +
+                            "\nInvalid option. Try again."
+                            + ConsoleColors.RESET);
                     break;
             }
         }
