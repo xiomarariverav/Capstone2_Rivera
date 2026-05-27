@@ -1,0 +1,12 @@
+Latte Lane is a Java-based point-of-sale (POS)
+application created for a custom coffee shop.
+The application allows customers to place and
+customize coffee orders through a menu-driven console interface.
+Customers can order coffee drinks in different sizes, add premium
+and regular add-ins, order pastries and other drinks,
+review their order, and generate receipt files automatically.
+
+This project was built using Object-Oriented Programming
+principles and demonstrates concepts such as encapsulation,
+polymorphism, inheritance, interfaces, builder patterns,
+collections, loops, file handling, and separation of concerns.

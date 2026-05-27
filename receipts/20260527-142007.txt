@@ -1,0 +1,15 @@
+Latte Lane Receipt
+------------------
+
+Brownie Pastry Price: $1.50
+
+medium iced Coffee
+- Coffee
+- Espresso Shot
+- Sugar
+- Vanilla Powder
+- Whipped Cream
+Drink Price: $7.75
+
+----------------------
+TOTAL: $9.25

@@ -19,7 +19,19 @@ public class UserInterface {
         boolean running = true;
 
         while (running) {
-            System.out.println("\nHome Screen");
+
+            System.out.println("""
+                                 ;,'
+                         _o_    ;:;'
+                     ,-.'---`.__ ;
+                    ((j`=====',-'
+                     `-\\     /
+                        `-=-'
+            
+            Welcome to Latte Lane!
+            """);
+
+            System.out.println("Home Screen");
             System.out.println("1) New Order");
             System.out.println("0) Exit");
             System.out.print("Choose an option: ");
@@ -31,6 +43,7 @@ public class UserInterface {
                     currentOrder = new Order();
                     displayOrderScreen();
                     break;
+
                 case "0":
                     System.out.println("Goodbye!");
                     running = false;
