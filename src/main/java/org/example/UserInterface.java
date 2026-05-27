@@ -533,4 +533,37 @@ public class UserInterface {
         System.out.println("----------------------");
         System.out.println("Total: $" + currentOrder.getTotal());
     }
+    public Ingredient findIngredientByName(String name) {
+
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.getName().equalsIgnoreCase(name)) {
+                return ingredient;
+            }
+        }
+
+        return null;
+    }
+    public CoffeeDrink createCloudMatcha(String size, String temperature) {
+
+        CloudMatcha drink = new CloudMatcha(size, temperature);
+
+        drink.addIngredient(findIngredientByName("Matcha"));
+        drink.addIngredient(findIngredientByName("Oat Milk"));
+        drink.addIngredient(findIngredientByName("Vanilla Syrup"));
+        drink.addIngredient(findIngredientByName("Cold Foam"));
+
+        return drink;
+    }
+    public CoffeeDrink createMochaDream(String size, String temperature) {
+
+        MochaDream drink = new MochaDream(size, temperature);
+
+        drink.addIngredient(findIngredientByName("Mocha"));
+        drink.addIngredient(findIngredientByName("Espresso Shot"));
+        drink.addIngredient(findIngredientByName("Mocha Syrup"));
+        drink.addIngredient(findIngredientByName("Chocolate Drizzle"));
+        drink.addIngredient(findIngredientByName("Whipped Cream"));
+
+        return drink;
+    }
 }
