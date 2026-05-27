@@ -595,6 +595,7 @@ public class UserInterface {
         CoffeeDrink drink;
 
         switch (choice) {
+
             case "1":
                 drink = createCloudMatcha(size, temperature);
                 break;
@@ -606,6 +607,30 @@ public class UserInterface {
             default:
                 System.out.println("Invalid option.");
                 return;
+        }
+
+        System.out.println("\nWould you like to customize this drink?");
+        System.out.println("1) Yes");
+        System.out.println("0) No");
+        System.out.print("Choose an option: ");
+
+        String customizeChoice = scanner.nextLine();
+
+        if (customizeChoice.equals("1")) {
+
+            CoffeeBuilder builder =
+                    new CoffeeBuilder(drink.getDrinkType(), size, temperature);
+
+            // copy existing ingredients into builder
+            for (Ingredient ingredient : drink.getAddIns()) {
+                builder.addIngredient(ingredient);
+            }
+
+            // allow additional customization
+            addPremiumAddIns(builder);
+            addRegularAddIns(builder);
+
+            drink = builder.build();
         }
 
         currentOrder.addItem(drink);
