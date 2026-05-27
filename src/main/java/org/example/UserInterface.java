@@ -54,6 +54,7 @@ public class UserInterface {
             System.out.println("3) Add Pastry");
             System.out.println("4) Checkout");
             System.out.println("5) View Current Order");
+            System.out.println("6) Add Signature Drink");
             System.out.println("0) Cancel Order");
             System.out.print("Choose an option: ");
 
@@ -79,6 +80,10 @@ public class UserInterface {
 
                 case "5":
                     displayCurrentOrder();
+                    break;
+
+                case "6":
+                    displayAddSignatureDrinkScreen();
                     break;
 
                 case "0":
@@ -565,5 +570,46 @@ public class UserInterface {
         drink.addIngredient(findIngredientByName("Whipped Cream"));
 
         return drink;
+    }
+    public void displayAddSignatureDrinkScreen() {
+
+        System.out.println("\nSignature Drinks");
+        System.out.println("1) Cloud Matcha");
+        System.out.println("2) Mocha Dream");
+        System.out.print("Choose a signature drink: ");
+
+        String choice = scanner.nextLine();
+
+        String size = selectSize();
+
+        if (size.equals("")) {
+            return;
+        }
+
+        String temperature = selectTemperature();
+
+        if (temperature.equals("")) {
+            return;
+        }
+
+        CoffeeDrink drink;
+
+        switch (choice) {
+            case "1":
+                drink = createCloudMatcha(size, temperature);
+                break;
+
+            case "2":
+                drink = createMochaDream(size, temperature);
+                break;
+
+            default:
+                System.out.println("Invalid option.");
+                return;
+        }
+
+        currentOrder.addItem(drink);
+
+        System.out.println(drink.getDrinkType() + " added to order.");
     }
 }
