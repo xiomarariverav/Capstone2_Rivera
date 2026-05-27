@@ -234,6 +234,7 @@ public class UserInterface {
 
             case "0":
                 System.out.println("Checkout canceled.");
+                currentOrder = null;
                 break;
 
             default:
@@ -370,7 +371,6 @@ public class UserInterface {
             System.out.println("4) Soy Milk");
             System.out.println("5) Coconut Milk");
             System.out.println("6) Extra Espresso Shot");
-            System.out.println("7) Extra Specialty Milk");
             System.out.println("0) Done");
 
             System.out.print("Choose an option: ");
@@ -403,10 +403,6 @@ public class UserInterface {
 
                 case "6":
                     ingredientName = "Extra Espresso Shot";
-                    break;
-
-                case "7":
-                    ingredientName = "Extra Specialty Milk";
                     break;
 
                 case "0":
