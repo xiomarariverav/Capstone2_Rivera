@@ -434,103 +434,86 @@ public class UserInterface {
         boolean adding = true;
 
         while (adding) {
-
-            System.out.println("\nRegular Add-Ins");
+            System.out.println("\nRegular Add-Ins / Syrups / Toppings");
             System.out.println("1) Sugar");
             System.out.println("2) Cinnamon");
             System.out.println("3) Sweetener");
             System.out.println("4) Ice");
-            System.out.println("5) Vanilla Syrup");
-            System.out.println("6) Caramel Syrup");
-            System.out.println("7) Mocha Syrup");
-            System.out.println("8) Hazelnut");
-            System.out.println("9) Brown Sugar");
-            System.out.println("10) Lavender");
-            System.out.println("11) Whipped Cream");
-            System.out.println("12) Caramel Drizzle");
-            System.out.println("13) Chocolate Drizzle");
-            System.out.println("14) Cold Foam");
+            System.out.println("5) Vanilla Powder");
+            System.out.println("6) Vanilla Syrup");
+            System.out.println("7) Caramel Syrup");
+            System.out.println("8) Mocha Syrup");
+            System.out.println("9) Hazelnut Syrup");
+            System.out.println("10) Brown Sugar Syrup");
+            System.out.println("11) Lavender Syrup");
+            System.out.println("12) Whipped Cream");
+            System.out.println("13) Caramel Drizzle");
+            System.out.println("14) Chocolate Drizzle");
+            System.out.println("15) Cold Foam");
             System.out.println("0) Done");
 
             System.out.print("Choose an option: ");
 
             String choice = scanner.nextLine();
-
             String ingredientName = "";
 
             switch (choice) {
-
                 case "1":
                     ingredientName = "Sugar";
                     break;
-
                 case "2":
                     ingredientName = "Cinnamon";
                     break;
-
                 case "3":
                     ingredientName = "Sweetener";
                     break;
-
                 case "4":
                     ingredientName = "Ice";
                     break;
-
                 case "5":
+                    ingredientName = "Vanilla Powder";
+                    break;
+                case "6":
                     ingredientName = "Vanilla Syrup";
                     break;
-
-                case "6":
+                case "7":
                     ingredientName = "Caramel Syrup";
                     break;
-
-                case "7":
+                case "8":
                     ingredientName = "Mocha Syrup";
                     break;
-
-                case "8":
-                    ingredientName = "Hazelnut";
-                    break;
-
                 case "9":
-                    ingredientName = "Brown Sugar";
+                    ingredientName = "Hazelnut Syrup";
                     break;
-
                 case "10":
-                    ingredientName = "Lavender";
+                    ingredientName = "Brown Sugar Syrup";
                     break;
-
                 case "11":
+                    ingredientName = "Lavender Syrup";
+                    break;
+                case "12":
                     ingredientName = "Whipped Cream";
                     break;
-
-                case "12":
+                case "13":
                     ingredientName = "Caramel Drizzle";
                     break;
-
-                case "13":
+                case "14":
                     ingredientName = "Chocolate Drizzle";
                     break;
-
-                case "14":
+                case "15":
                     ingredientName = "Cold Foam";
                     break;
-
                 case "0":
                     adding = false;
                     continue;
-
                 default:
                     System.out.println("Invalid option.");
                     continue;
             }
 
             for (Ingredient ingredient : ingredients) {
-
                 if (ingredient.getName().equalsIgnoreCase(ingredientName)) {
-
                     builder.addIngredient(ingredient);
-
                     System.out.println(ingredientName + " added.");
                 }
             }
