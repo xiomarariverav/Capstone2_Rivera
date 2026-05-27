@@ -362,12 +362,17 @@ public class UserInterface {
         boolean adding = true;
 
         while (adding) {
+
             System.out.println("\nPremium Add-Ins");
             System.out.println("1) Espresso Shot");
-            System.out.println("2) Specialty Milk");
-            System.out.println("3) Extra Espresso Shot");
-            System.out.println("4) Extra Specialty Milk");
+            System.out.println("2) Oat Milk");
+            System.out.println("3) Almond Milk");
+            System.out.println("4) Soy Milk");
+            System.out.println("5) Coconut Milk");
+            System.out.println("6) Extra Espresso Shot");
+            System.out.println("7) Extra Specialty Milk");
             System.out.println("0) Done");
+
             System.out.print("Choose an option: ");
 
             String choice = scanner.nextLine();
@@ -375,29 +380,50 @@ public class UserInterface {
             String ingredientName = "";
 
             switch (choice) {
+
                 case "1":
                     ingredientName = "Espresso Shot";
                     break;
+
                 case "2":
-                    ingredientName = "Specialty Milk";
+                    ingredientName = "Oat Milk";
                     break;
+
                 case "3":
+                    ingredientName = "Almond Milk";
+                    break;
+
+                case "4":
+                    ingredientName = "Soy Milk";
+                    break;
+
+                case "5":
+                    ingredientName = "Coconut Milk";
+                    break;
+
+                case "6":
                     ingredientName = "Extra Espresso Shot";
                     break;
-                case "4":
+
+                case "7":
                     ingredientName = "Extra Specialty Milk";
                     break;
+
                 case "0":
                     adding = false;
                     continue;
+
                 default:
                     System.out.println("Invalid option.");
                     continue;
             }
 
             for (Ingredient ingredient : ingredients) {
+
                 if (ingredient.getName().equalsIgnoreCase(ingredientName)) {
+
                     builder.addIngredient(ingredient);
+
                     System.out.println(ingredientName + " added.");
                 }
             }

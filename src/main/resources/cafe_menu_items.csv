@@ -8,8 +8,10 @@ Chai|drink_base|4.50|5.75|6.50
 Mocha|drink_base|4.50|5.75|6.50
 Espresso Shot|premium|1.00|2.00|3.00
 Extra Espresso Shot|premium|0.50|1.00|1.50
-Specialty Milk|premium|0.75|1.50|2.25
-Extra Specialty Milk|premium|0.30|0.60|0.90
+Oat Milk|premium|0.75|1.50|2.25
+Almond Milk|premium|0.75|1.50|2.25
+Soy Milk|premium|0.75|1.50|2.25
+Coconut Milk|premium|0.75|1.50|2.25
 Sugar|regular|0.00|0.00|0.00
 Cinnamon|regular|0.00|0.00|0.00
 Sweetener|regular|0.00|0.00|0.00
