@@ -7,22 +7,26 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ReceiptWriter {
+    //This class is responsible for creating and saving receipts to a text file
 
+    //takes an order, creates a receipt file, saves the order details into it
     public static void saveReceipt(Order order){
 
         try{
 
-            //creates receipt folder if it doesnt exist
+            //creates receipt folder
             File folder = new File("receipts");
 
+            //check if Folder Exists
             if(!folder.exists()){
+                //If it DOESN’T exist, creates it automatically
                 folder.mkdir();
             }
 
             //creates timestamp for filename
             DateTimeFormatter formatter =
                     DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
-
+            //turns the current time into a string
             String timestamp =
                     LocalDateTime.now().format(formatter);
 

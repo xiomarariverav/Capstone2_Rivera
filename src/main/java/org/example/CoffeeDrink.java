@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class CoffeeDrink implements OrderItem {
+   //MUST include: getPrice() and getDetails()
 
     private String drinkType;
     private String size;
@@ -17,11 +18,14 @@ public class CoffeeDrink implements OrderItem {
         this.addIns = new ArrayList<>();
     }
 
+    //Adds an ingredient to the coffee drink.
     public void addIngredient(Ingredient ingredient) {
         addIns.add(ingredient);
     }
 
+    //Calculates the total price of the drink.
     public BigDecimal getPrice() {
+        //Start Total at 0
         BigDecimal total = BigDecimal.ZERO;
 
         for (Ingredient ingredient : addIns) {
@@ -45,10 +49,13 @@ public class CoffeeDrink implements OrderItem {
         return temperature;
     }
 
+    //Returns the ingredient list
     public ArrayList<Ingredient> getAddIns() {
         return addIns;
     }
+
     @Override
+    //Creates the full formatted drink description
     public String getDetails() {
         String details = size + " " + temperature + " " + drinkType + "\n";
 

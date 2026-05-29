@@ -3,6 +3,7 @@ package org.example;
 import java.math.BigDecimal;
 
 public class OtherDrink implements OrderItem{
+    //MUST include: getPrice() and getDetails()
 
     private String flavor;
     private String size;
@@ -12,6 +13,7 @@ public class OtherDrink implements OrderItem{
         this.size = size;
     }
     @Override
+    //calculates the drink price based on size.
     public BigDecimal getPrice(){
 
         switch(size.toLowerCase()){
@@ -25,12 +27,14 @@ public class OtherDrink implements OrderItem{
             case "large":
                 return new BigDecimal("3.00");
 
+            //defensive coding
             default:
                 return BigDecimal.ZERO;
         }
     }
 
     @Override
+    //Returns a formatted description of the drink
     public String getDetails() {
         return size + " " + flavor + " Price: $" + getPrice();
     }

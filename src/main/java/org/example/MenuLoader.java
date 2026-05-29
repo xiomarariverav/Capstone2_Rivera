@@ -14,8 +14,10 @@ public class MenuLoader {
 
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
 
+            //Skip Header Row
             reader.readLine();
 
+            //Read First Real Line
             String line = reader.readLine();
 
             while (line != null) {

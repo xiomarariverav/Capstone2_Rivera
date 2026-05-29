@@ -1,10 +1,12 @@
 package org.example;
 
 public class CoffeeBuilder {
+    //This class builds custom coffee drinks, adds ingredients gradually, and returns the finished drink
 
     private CoffeeDrink coffeeDrink;
 
     public CoffeeBuilder(String drinkType, String size, String temperature) {
+        //Creates CoffeeDrink Object
         coffeeDrink = new CoffeeDrink(drinkType, size, temperature);
     }
 
@@ -15,6 +17,7 @@ public class CoffeeBuilder {
     }
 
     public CoffeeDrink build() {
+        //returns the finished drink.
         return coffeeDrink;
     }
 }

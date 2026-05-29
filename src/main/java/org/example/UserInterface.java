@@ -38,7 +38,7 @@ public class UserInterface {
 """ + ConsoleColors.RESET);
 
             System.out.println(ConsoleColors.CREAM + """
-                  ✦ Welcome to Latte Lane ✦
+             ✦ Welcome to Latte Lane ✦
 """ + ConsoleColors.RESET);
 
             System.out.println(ConsoleColors.DARK_SAGE + """
@@ -474,7 +474,7 @@ public class UserInterface {
             System.out.println("1) Sugar");
             System.out.println("2) Cinnamon");
             System.out.println("3) Sweetener");
-            System.out.println("4) Ice");
+            System.out.println("4) Extra Ice");
             System.out.println("5) Vanilla Powder");
             System.out.println("6) Vanilla Syrup");
             System.out.println("7) Caramel Syrup");
@@ -504,7 +504,7 @@ public class UserInterface {
                     ingredientName = "Sweetener";
                     break;
                 case "4":
-                    ingredientName = "Ice";
+                    ingredientName = " Extra Ice";
                     break;
                 case "5":
                     ingredientName = "Vanilla Powder";
